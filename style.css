@@ -1,0 +1,388 @@
+/* Updated Global Styles */
+body {
+    color: #fff;
+    background-color: #23272a;
+    font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #7289da;
+}
+
+/* Hero Section (Home) */
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 0 2rem;
+}
+/* Home Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Menyesuaikan tinggi layar penuh */
+    padding: 0 2rem;
+    background: #23272a; /* Background warna */
+}
+
+/* Logo in Home Section */
+.hero .logo-home {
+    max-width: 200px; /* Ukuran logo */
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 20px #ffffff); /* Efek bayangan untuk mencolokkan logo */
+    animation: popIn 1s ease-out forwards; /* Animasi logo */
+    transform-origin: center;
+}
+
+/* Pop In Animation for Logo */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover Effect */
+.hero .logo-home:hover {
+    transform: scale(1.1); /* Membesarkan logo saat dihover */
+    transition: transform 0.3s ease;
+}
+
+/* Home Section Heading */
+.hero h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    background-image: linear-gradient(to right, #7289da, #fff);
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-fill 3s ease forwards;
+    margin-bottom: 1rem;
+}
+
+/* Animasi mengisi warna dari kiri ke kanan */
+@keyframes gradient-fill {
+    to {
+        background-position: 100%;
+    }
+}
+
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #b9bbbe;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #7289da;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.hero .btn:hover {
+    background-color: #5b6eae;
+}
+
+/* Sticky Menu Effect */
+nav.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        text-align: right;
+        padding: 1rem 2rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .nav-links a {
+        padding: 1rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+/* About Us Section */
+#about {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: #2c2f33;
+    color: #fff;
+}
+
+#about h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #7289da;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+#about p {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1.2s ease-out forwards;
+}
+
+/* Styling for Founders Section */
+#founders {
+    padding: 5rem 2rem;
+    background-color: #2c2f33;
+    color: #fff;
+    text-align: center;
+}
+
+#founders h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #7289da;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+.founders {
+    display: flex;
+    justify-content: center; /* Menyusun dua kartu di tengah */
+    flex-wrap: wrap; /* Membungkus kartu saat ruang tidak mencukupi */
+    padding: 2rem 0;
+    gap: 2rem; /* Menambahkan jarak antara kartu */
+}
+
+.founder-card {
+    background-color: #2c2f33;
+    border-radius: 15px; /* Membuat sudut tumpul */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Memberikan efek bayangan */
+    padding: 1.5rem;
+    width: calc(50% - 2rem); /* Menyesuaikan dua kartu per baris */
+    max-width: 400px; /* Maksimal lebar kartu */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.founder-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Membuat sudut tumpul pada gambar */
+    margin-bottom: 1rem;
+}
+
+.founder-card h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.founder-card p {
+    color: #b9bbbe;
+}
+
+/* Hover Effect */
+.founder-card:hover {
+    transform: scale(1.05); /* Membesarkan kartu saat dihover */
+}
+
+/* Members Section */
+#members {
+    padding: 5rem 2rem;
+    background-color: #2c2f33;
+    color: #fff;
+    text-align: center;
+}
+
+#members h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #7289da;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+.member-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.member-list .member-card {
+    background-color: #23272a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: calc(25% - 4rem);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1.4s ease-out forwards;
+}
+
+.member-list .member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.member-list .member-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.member-list .member-card p {
+    font-size: 1rem;
+    color: #b9bbbe;
+}
+
+/* Gallery Section */
+#gallery {
+    padding: 5rem 2rem;
+    background-color: #23272a;
+    color: #fff;
+    text-align: center;
+}
+
+#gallery h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #7289da;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1.6s ease-out forwards;
+}
+
+.gallery-images a {
+    display: block;
+    overflow: hidden;
+}
+
+.gallery-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images maintain aspect ratio and fill their container */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Animations */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .founder-card, .member-list .member-card {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .founder-card, .member-list .member-card {
+        width: 100%;
+    }
+}
