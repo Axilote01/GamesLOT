@@ -46,7 +46,7 @@
         </div>
         <div class="founder-card">
             <h3>Nakuro</h3>
-            <p>Co-Owner</p>
+            <p>Co-Owner - Clown</p>
             <img src="nakuro.png" alt="Founder 2">
         </div>
     </div>
@@ -104,5 +104,21 @@
         <p>&copy; 2024 GamesLOT. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
+
+    <script>
+
+        // Sticky menu effect
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('scrolled', window.scrollY > 0);
+});
+
+// Toggle menu on mobile
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
+        
+    </script>
 </body>
 </html>
